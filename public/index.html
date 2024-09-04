@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Bill Management</h1>
+<table id="billTable">
+    <thead>
+    <tr>
+        <th onclick="sortTable('bill')" onkeydown="sortTable('bill')">BILL</th>
+        <th onclick="sortTable('dueDate')" onkeydown="sortTable('dueDate')">DUE DATE</th>
+        <th onclick="sortTable('autoPay')" onkeydown="sortTable('autoPay')">AUTO PAY</th>
+        <th onclick="sortTable('due')" onkeydown="sortTable('due')">DUE</th>
+        <th onclick="sortTable('balance')" onkeydown="sortTable('balance')">BALANCE</th>
+        <th onclick="sortTable('website')" onkeydown="sortTable('website')">WEBSITE</th>
+        <th onclick="sortTable('lastPaymentDate')" onkeydown="sortTable('lastPaymentDate')">LAST PAYMENT DATE</th>
+        <th>ACTIONS</th>
+    </tr>
+    </thead>
+    <tbody id="billTableBody">
+    <!-- Rows will be dynamically populated here -->
+    </tbody>
+</table>
+<button onclick="addNewBill()">Add New Bill</button>
+
+<h2>Disabled Bills</h2>
+<table id="disabledBillTable">
+    <thead>
+    <tr>
+        <th onclick="sortTable('bill', true)" onkeydown="sortTable('bill', true)">BILL</th>
+        <th onclick="sortTable('dueDate', true)" onkeydown="sortTable('dueDate', true)">DUE DATE</th>
+        <th onclick="sortTable('autoPay', true)" onkeydown="sortTable('autoPay', true)">AUTO PAY</th>
+        <th onclick="sortTable('due', true)" onkeydown="sortTable('due', true)">DUE</th>
+        <th onclick="sortTable('balance', true)" onkeydown="sortTable('balance', true)">BALANCE</th>
+        <th onclick="sortTable('website', true)" onkeydown="sortTable('website', true)">WEBSITE</th>
+        <th onclick="sortTable('lastPaymentDate', true)" onkeydown="sortTable('lastPaymentDate', true)">LAST PAYMENT DATE</th>
+        <th>ACTIONS</th>
+    </tr>
+    </thead>
+    <tbody id="disabledBillTableBody">
+    <!-- Disabled rows will be dynamically populated here -->
+    </tbody>
+</table>
+
+<!-- Modal HTML structure -->
+<div id="confirmationModal" class="modal">
+    <div class="modal-content">
+        <p id="modalText"></p>
+        <button id="confirmButton">Confirm</button>
+        <button id="cancelButton">Cancel</button>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

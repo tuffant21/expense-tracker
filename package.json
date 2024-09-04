@@ -1,0 +1,20 @@
+{
+  "name": "expense-tracker",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js",
+    "init-data": "node init-data.js",
+    "docker:build": "docker build -t expense-tracker .",
+    "docker:compose:up": "docker compose up -d",
+    "docker:compose:down": "docker compose down"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.8.0"
+  }
+}
