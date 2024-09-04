@@ -1,0 +1,33 @@
+volumes:
+  mongo-data:
+
+networks:
+  app-network:
+    driver: bridge
+
+services:
+  mongo:
+    image: mongo:6.0
+    container_name: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - app-network
+  bills-service:
+    image: expense-tracker
+    container_name: bills-service
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      MONGO_URL: mongodb://root:example@mongo:27017
+      MONGO_DB: bills-db
+      MONGO_COLLECTION: bills
+    networks:
+      - app-network
