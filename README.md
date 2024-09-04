@@ -57,7 +57,15 @@ Install the Node.js dependencies using the following command:
 npm install
 ```
 
-3. Run the Project
+3. Run docker build
+
+There is a docker file that needs to be build for the docker compose to work. You can build it with this command:
+
+```bash
+npm run docker:build
+```
+
+4. Run the Project
 
 You can run the project using Docker:
 
@@ -66,7 +74,7 @@ npm run docker:compose:up
 ```
 This command will start the MongoDB service and the Express.js application.
 
-4. Seed the Database
+5. Seed the Database
 
 To seed the MongoDB database with initial data, run the following command:
 
